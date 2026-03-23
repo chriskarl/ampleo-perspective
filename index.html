@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>A Perspective on Amplēo's AI Opportunity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink:        #0e0c0a;
+  --paper:      #f5f2ed;
+  --sand:       #e4ddd2;
+  --mid:        rgba(14,12,10,0.55);
+  --faint:      rgba(14,12,10,0.04);
+  --ampleo:     #1e3d2b;
+  --ampleo-lime:#7a9e00;
+  --ampleo-mid: rgba(30,61,43,0.06);
+  --ampleo-dark:rgba(30,61,43,0.92);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Barlow",sans-serif;font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:780px;margin:0 auto;padding:72px 40px 100px}
+
+/* HEADER */
+.header{margin-bottom:72px;padding-bottom:48px;border-bottom:1px solid var(--sand)}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:24px}
+.title{font-family:"Lora",serif;font-size:clamp(32px,4.2vw,50px);font-weight:400;line-height:1.15;letter-spacing:-.025em;margin-bottom:20px;text-wrap:balance;max-width:700px}
+.title em{font-style:italic;color:var(--ampleo-lime)}
+.lede{font-size:17px;font-weight:400;line-height:1.75;color:var(--ink);max-width:640px}
+
+/* PART DIVIDER */
+.part{margin:64px 0 48px;display:flex;align-items:center;gap:20px}
+.part-num{font-family:"Lora",serif;font-size:clamp(52px,8vw,80px);font-weight:400;color:var(--ampleo);line-height:1;letter-spacing:-.03em;flex-shrink:0;opacity:.18}
+.part-body{}
+.part-label{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ampleo-lime);margin-bottom:8px}
+.part-title{font-family:"Lora",serif;font-size:clamp(24px,3.5vw,36px);font-weight:400;line-height:1.2;letter-spacing:-.02em;text-wrap:balance}
+.part-title em{font-style:italic;color:var(--ampleo-lime)}
+
+/* SOLVED STATE */
+.solved{background:var(--ampleo);padding:40px 44px;margin:32px 0}
+.solved-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ampleo-lime);margin-bottom:16px}
+.solved p{font-family:"Lora",serif;font-size:clamp(17px,2.2vw,22px);font-weight:400;font-style:italic;line-height:1.6;color:white;margin-bottom:14px;text-wrap:balance}
+.solved p:last-child{margin-bottom:0}
+
+/* WORKING BACKWARDS */
+.wback{margin:32px 0}
+.wback-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ampleo);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.wback-label::after{content:"";flex:1;height:1px;background:var(--sand)}
+.steps{margin:0}
+.step{display:grid;grid-template-columns:28px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--sand)}
+.step:first-child{border-top:1px solid var(--sand)}
+.step-n{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--ampleo-lime);padding-top:3px;font-weight:500}
+.step-body{}
+.step-title{font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ampleo);margin-bottom:4px}
+.step-val{font-size:14px;font-weight:400;line-height:1.7;letter-spacing:-.01em;color:var(--ink)}
+
+/* WHAT IT TAKES */
+.takes{margin:32px 0}
+.takes-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ampleo);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.takes-label::after{content:"";flex:1;height:1px;background:var(--sand)}
+.take-cards{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.take-card{padding:24px 24px 28px;background:var(--ampleo-mid)}
+.take-card-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ampleo);margin-bottom:8px}
+.take-card-title{font-family:"Lora",serif;font-size:17px;font-weight:500;margin-bottom:8px;letter-spacing:-.01em;color:var(--ink)}
+.take-card p{font-size:13px;font-weight:400;line-height:1.65;color:var(--ink);margin:0}
+
+/* POV */
+.pov{padding:32px 36px;background:var(--ampleo-lime);margin:32px 0}
+.pov-bright{padding:32px 36px;background:rgba(204,255,0,0.45);margin:32px 0}
+.pov p{font-family:"Lora",serif;font-size:18px;font-weight:400;font-style:italic;line-height:1.55;color:var(--ink);margin:0;text-wrap:balance}
+
+/* PROSE */
+.prose{margin:24px 0}
+.prose p{font-size:15px;font-weight:400;line-height:1.8;letter-spacing:-.01em;color:var(--ink);margin-bottom:16px;max-width:660px}
+.prose p:last-child{margin-bottom:0}
+.sub{display:inline;font-family:"Barlow Condensed",sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ampleo);margin-right:6px}
+
+/* DIVIDER */
+.div{border:none;border-top:1px solid var(--sand);margin:56px 0}
+
+/* CLOSING */
+.closing{margin-top:56px;padding-top:40px;border-top:1px solid var(--sand)}
+.closing-text{font-family:"Lora",serif;font-size:clamp(17px,2.2vw,22px);font-weight:400;line-height:1.5;letter-spacing:-.02em;color:var(--ink);max-width:580px;margin-bottom:20px;text-wrap:balance}
+.closing-sig{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;color:var(--mid)}
+
+@media(max-width:620px){
+  .wrap{padding:40px 20px 60px}
+  .take-cards{grid-template-columns:1fr}
+  .step{grid-template-columns:1fr;gap:4px}
+  .solved{padding:28px 24px}
+  .part{gap:14px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="eyebrow">Amplēo · March 2026 · Prepared by Chris Mayfield &amp; Jon Packer</div>
+    <h1 class="title">Amplēo built three decades of trust. Now their clients are asking for something <em>trust alone can't deliver.</em></h1>
+    <p class="lede">Amplēo is one of the most respected fractional executive platforms in the country. Their clients trust them with finance, HR, and marketing. And increasingly, those same clients are asking: can you help us deploy AI? Right now, the honest answer is no. That gap is the conversation.</p>
+  </header>
+
+  <!-- PART 1 -->
+  <div class="part">
+    <div class="part-num">1</div>
+    <div class="part-body">
+      <div class="part-label">New Service Lines</div>
+      <h2 class="part-title">Amplēo becomes the firm<br><em>that delivers AI transformation from inside.</em></h2>
+    </div>
+  </div>
+
+  <!-- SOLVED STATE 1 -->
+  <div class="solved">
+    <p>The client is ahead of their competitors on AI. They got there through the same relationship they already had. No new vendor. No separate engagement. The fractional executive they trusted with their finances or their people also led their AI transformation.</p>
+    <p>Amplēo didn't just retain the relationship. They deepened it. And when the client asks how it happened, the answer is the same thing it's always been: the people we already trusted knew our business. Most companies fail at AI deployment not because of the technology. It fails because the people building it don't know the business. Amplēo's people already do. No other firm can say that.</p>
+  </div>
+
+  <!-- WORKING BACKWARDS 1 -->
+  <div class="wback">
+    <div class="wback-label">What Must Be True</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">01</div>
+        <div class="step-body">
+          <div class="step-title">Clients can point to it</div>
+          <div class="step-val">There is a real company, already an Amplēo client, whose finance or HR function runs with AI embedded in it. Not a case study written after the fact. A live example Amplēo's sales team can walk a prospect through. That is what makes the positioning real.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <div class="step-body">
+          <div class="step-title">A working offering exists</div>
+          <div class="step-val">One service line has a defined AI-native offering. It has a name, a scope, a delivery model, and a price. It is not a pilot or an experiment. It is something Amplēo can sell, deliver, and repeat. Most likely finance or HR, where the client demand signal is clearest and the data access is deepest.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <div class="step-body">
+          <div class="step-title">The build is done</div>
+          <div class="step-val">Someone has built the actual AI capability: the logic, the interface, the integration with the client's systems, delivered inside a real engagement. Not designed. Not roadmapped. Built. This is the step most strategy engagements never reach. It is also the step that makes everything else real.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">04</div>
+        <div class="step-body">
+          <div class="step-title">A beachhead is chosen</div>
+          <div class="step-val">Before the build, one decision is made: which service line, which client type, which specific problem. Not a committee. Not a strategy document with six options. One choice, made deliberately, with the highest-signal evidence available. Everything else follows from that.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT IT TAKES 1 -->
+  <div class="takes">
+    <div class="takes-label">Why Amplēo</div>
+    <div class="take-cards">
+      <div class="take-card">
+        <div class="take-card-label">Moat</div>
+        <div class="take-card-title">Context no one else has</div>
+        <p>Every AI firm that approaches Amplēo's clients starts from zero. They spend weeks learning the business before they can build anything useful. Amplēo's executives already have the data, the relationships, and the institutional knowledge. That context is the scarce resource in AI deployment. Amplēo already owns it.</p>
+      </div>
+      <div class="take-card">
+        <div class="take-card-label">Positioning</div>
+        <div class="take-card-title">A category of one</div>
+        <p>Not "AI consulting." Not "fractional AI officers." The frame that no other firm can claim: AI transformation delivered by the people who already know the business. Pure-play AI firms don't have the embedded relationship. Traditional consultants don't have the AI capability. Amplēo is positioned to have both.</p>
+      </div>
+      <div class="take-card">
+        <div class="take-card-label">Proof</div>
+        <div class="take-card-title">One real client story</div>
+        <p>The market frame becomes defensible the moment there is one real client who experienced it. Not a pilot. Not an internal demo. A client who can say: Amplēo did this inside our business, and it worked. That story is worth more than any positioning document.</p>
+      </div>
+      <div class="take-card">
+        <div class="take-card-label">Urgency</div>
+        <div class="take-card-title">The window is open now</div>
+        <p>Amplēo's clients are already being approached by AI consultants. The window where "trusted advisor who also does AI" is a distinct category won't stay open indefinitely. The firms that move first get credit for being first. In professional services, first-mover trust compounds.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pov-bright">
+    <p>"Most companies fail at AI deployment not because of the technology. It fails because the people building it don't know the business. Amplēo's people already do. That changes everything about what's possible."</p>
+  </div>
+
+
+  <hr class="div"/>
+
+  <!-- PART 2 -->
+  <div class="part">
+    <div class="part-num">2</div>
+    <div class="part-body">
+      <div class="part-label">Internal Transformation</div>
+      <h2 class="part-title">Amplēo becomes<br><em>an AI-native professional services firm.</em></h2>
+    </div>
+  </div>
+
+  <!-- SOLVED STATE 2 -->
+  <div class="solved">
+    <p>Lincoln isn't explaining to the board why the AI strategy isn't done yet. It's done. It's running. There's a result to point to.</p>
+    <p>Joe's tech council isn't trying to coordinate six divisions doing six different things. There's a standard now. Everyone's on it. The inconsistency is gone.</p>
+    <p>When a client asks if Amplēo can help them with AI, the answer is yes, and there's something real to show them. Not a pitch. Not a roadmap. A working service line with clients already in it.</p>
+  </div>
+
+  <!-- WORKING BACKWARDS 2 -->
+  <div class="wback">
+    <div class="wback-label">What Must Be True</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">01</div>
+        <div class="step-body">
+          <div class="step-title">The network operates on a shared standard</div>
+          <div class="step-val">All 150+ executives use the same AI operating model, the same tools, the same approach to integrating AI into client work, the same standard for what "AI-enabled" means inside an Amplēo engagement. The inconsistency that exists today is gone. The network is the product.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <div class="step-body">
+          <div class="step-title">A unified architecture connects the divisions</div>
+          <div class="step-val">Finance, HR, marketing, turnaround: each division is running AI in its own way today. Those experiments have been evaluated, the best systematized, and a shared architecture connects them. The employee handbook Q&A, the Excel modeling, the sales call coaching: no longer isolated pockets. One system.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <div class="step-body">
+          <div class="step-title">An owner is accountable for it</div>
+          <div class="step-val">The transformation has a person behind it. Not a committee, not a council that meets monthly, but someone with authority and accountability. The tech council Joe is already thinking about becomes real when it has an execution owner underneath it.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">04</div>
+        <div class="step-body">
+          <div class="step-title">Unity Partners can see the return</div>
+          <div class="step-val">The PE investment mandate was explicit: technology investment, systemic improvement, service expansion. There is something concrete to show the board. Not a roadmap. A working capability already generating client results and differentiating Amplēo in the market.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT IT TAKES 2 -->
+  <div class="takes">
+    <div class="takes-label">Why Amplēo</div>
+    <div class="take-cards">
+      <div class="take-card">
+        <div class="take-card-label">Audit</div>
+        <div class="take-card-title">Know what already exists</div>
+        <p>Before building anything new, understand what is already happening. Which divisions are furthest along. Where the highest-leverage consolidation points are. What the executives who are using AI daily are actually doing, and what is working. The audit turns scattered experimentation into a foundation.</p>
+      </div>
+      <div class="take-card">
+        <div class="take-card-label">Standard</div>
+        <div class="take-card-title">Define what AI-native means at Amplēo</div>
+        <p>Not a vendor selection. Not a tool list. A clear definition of what an AI-enabled Amplēo engagement looks like, feels like, and delivers. That standard becomes the thing every new executive is trained on, every existing executive migrates toward, and every client eventually experiences.</p>
+      </div>
+      <div class="take-card">
+        <div class="take-card-label">Mandate</div>
+        <div class="take-card-title">Someone owns it</div>
+        <p>The tech council Joe is building is the right instinct. The missing ingredient is a person with a clear mandate to execute. Not advise, not coordinate, but build and ship. The transformation from inconsistent to unified requires someone whose job it is to close that gap, week by week.</p>
+      </div>
+      <div class="take-card">
+        <div class="take-card-label">Signal</div>
+        <div class="take-card-title">Something real within 90 days</div>
+        <p>Unity Partners is watching. The board needs to see something tangible. Not a strategy document, not a pilot that is still in progress. One working AI capability, inside one service line, with one client story. That is what changes the internal narrative from "we are exploring AI" to "we are an AI-native firm."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pov-bright">
+    <p>The firms that define what AI-native professional services looks like will own that category for a decade. Amplēo has the relationships, the trust, and the embedded access to be that firm. The question is only whether they move before someone else does.</p>
+  </div>
+
+  <!-- CLOSING -->
+
+  <!-- THE BUILD DECISION -->
+  <hr class="div"/>
+  <div style="margin:0 0 48px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ampleo);margin-bottom:16px">The Build Decision</div>
+    <p style="font-size:15px;font-weight:400;line-height:1.8;letter-spacing:-.01em;color:var(--ink);margin-bottom:14px;max-width:660px">Both journeys require two types of work. The first is strategy: understanding the landscape, defining the beachhead, mapping the path. That work is well served by the firms Amplēo is already in conversation with.</p>
+    <p style="font-size:15px;font-weight:400;line-height:1.8;letter-spacing:-.01em;color:var(--ink);margin-bottom:14px;max-width:660px">The second is the build. A small team, two or three people, takes the strategy and produces the working thing. The actual AI capability inside the actual service line, integrated with the actual client systems -- HubSpot, NetSuite, ClickUp, the Google Workspace migration. That team needs product thinking to define what the thing should do and AI engineering depth to build it. Those are different skills and they rarely live in the same person.</p>
+    <p style="font-size:15px;font-weight:400;line-height:1.8;letter-spacing:-.01em;color:var(--ink);margin-bottom:0;max-width:660px">Most companies that have an AI strategy don't have an AI capability. The decision that separates them is whether someone was accountable for the build. Both types of work are necessary. They are sequential, not competing.</p>
+  </div>
+
+  <div class="closing">
+    <p class="closing-text">Both transformations start in the same place: one beachhead, one build, one real result. The positioning exists. The market is ready. The right move is to begin.</p>
+    <p class="closing-sig">Chris Mayfield &amp; Jon Packer · March 2026</p>
+  </div>
+
+</div>
+</body>
+</html>
