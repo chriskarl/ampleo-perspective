@@ -21,55 +21,71 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:'Barlow',sans-serif;font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
-.wrap{max-width:720px;margin:0 auto;padding:64px 40px 80px}
+.wrap{max-width:1080px;margin:0 auto;padding:64px 40px 80px}
 
 /* HEADER */
-.header{margin-bottom:48px;padding-bottom:36px;border-bottom:1px solid var(--sand)}
+.header{margin-bottom:48px;padding-bottom:36px;border-bottom:1px solid var(--sand);max-width:720px}
 .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:16px}
 .title{font-family:'Lora',serif;font-size:clamp(28px,4vw,40px);font-weight:400;line-height:1.15;letter-spacing:-.025em;margin-bottom:12px}
 .title em{font-style:italic;color:var(--ampleo)}
 .lede{font-size:15px;color:var(--mid);max-width:580px;line-height:1.7}
 
-/* PERSON SECTION */
-.person-section{margin-bottom:56px}
-.person-header{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+/* SIDE BY SIDE */
+.columns{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-bottom:48px}
+
+/* PERSON COLUMN */
+.person-col{}
+.person-header{display:flex;align-items:center;gap:10px;margin-bottom:20px}
 .person-num{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--ampleo)}
 .person-rule{flex:1;height:1px;background:var(--sand)}
-.person-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ampleo)}
+.person-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ampleo)}
 
-.person-name{font-family:'Lora',serif;font-size:24px;font-weight:500;letter-spacing:-.02em;margin-bottom:4px}
-.person-title-line{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--mid);margin-bottom:20px}
+.person-name{font-family:'Lora',serif;font-size:22px;font-weight:500;letter-spacing:-.02em;margin-bottom:4px}
+.person-title-line{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;color:var(--mid);margin-bottom:20px;line-height:1.5}
 
 /* TRACK RECORD */
-.track{margin:20px 0}
-.track-item{display:grid;grid-template-columns:24px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--sand)}
+.track{margin:16px 0}
+.track-item{padding:12px 0;border-bottom:1px solid var(--sand)}
 .track-item:first-child{border-top:1px solid var(--sand)}
-.track-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ampleo-lime);padding-top:3px}
-.track-body{}
-.track-title{font-family:'Lora',serif;font-size:16px;font-weight:500;letter-spacing:-.01em;margin-bottom:4px;line-height:1.3}
-.track-detail{font-size:14px;color:var(--mid);line-height:1.65}
-.track-tag{display:inline;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;font-weight:500;color:var(--ampleo);background:var(--ampleo-mid);margin-right:6px}
+.track-title{font-family:'Lora',serif;font-size:15px;font-weight:500;letter-spacing:-.01em;margin-bottom:4px;line-height:1.3}
+.track-detail{font-size:13px;color:var(--mid);line-height:1.6}
+.track-tag{display:inline;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;font-weight:500;color:var(--ampleo);background:var(--ampleo-mid);margin-right:4px}
+
+/* RELEVANCE */
+.relevance{padding:20px 24px;background:var(--ampleo-mid);margin:20px 0}
+.relevance-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ampleo);margin-bottom:10px}
+.relevance p{font-size:13px;line-height:1.65;color:var(--ink);margin-bottom:6px}
+.relevance p:last-child{margin-bottom:0}
 
 /* TOGETHER SECTION */
-.together{background:var(--ampleo);padding:32px 36px;margin:32px 0}
+.together{background:var(--ampleo);padding:32px 36px;margin:0 0 48px}
 .together-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ampleo-lime);margin-bottom:16px}
 .together h3{font-family:'Lora',serif;font-size:21px;font-weight:400;color:white;margin-bottom:14px}
 .together p{font-size:14px;line-height:1.75;color:rgba(255,255,255,0.82);margin-bottom:10px}
 .together p:last-child{margin-bottom:0}
 
-/* RELEVANCE */
-.relevance{padding:24px 28px;background:var(--ampleo-mid);margin:24px 0}
-.relevance-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ampleo);margin-bottom:12px}
-.relevance p{font-size:14px;line-height:1.7;color:var(--ink);margin-bottom:8px}
-.relevance p:last-child{margin-bottom:0}
+/* BUILT TOGETHER */
+.built-section{margin-bottom:48px}
+.built-header{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.built-num{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--ampleo)}
+.built-rule{flex:1;height:1px;background:var(--sand)}
+.built-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ampleo)}
+
+.built-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px}
+.built-card{padding:20px;background:var(--ampleo-mid)}
+.built-card-title{font-family:'Lora',serif;font-size:15px;font-weight:500;margin-bottom:6px;letter-spacing:-.01em}
+.built-card-tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ampleo);margin-bottom:8px}
+.built-card p{font-size:12px;line-height:1.6;color:var(--mid);margin:0}
 
 /* CLOSING */
-.closing{margin-top:48px;padding-top:32px;border-top:1px solid var(--sand)}
+.closing{padding-top:32px;border-top:1px solid var(--sand)}
 .closing p{font-size:14px;color:var(--mid);line-height:1.7;max-width:540px}
 .closing-sig{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--mid);margin-top:16px}
 
-@media(max-width:580px){
+@media(max-width:768px){
   .wrap{padding:40px 20px 60px}
+  .columns{grid-template-columns:1fr;gap:40px}
+  .built-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -79,188 +95,158 @@ body{background:var(--paper);color:var(--ink);font-family:'Barlow',sans-serif;fo
   <header class="header">
     <div class="eyebrow">Prepared for Amplēo · March 2026</div>
     <h1 class="title">Two builders. <em>One mandate.</em></h1>
-    <p class="lede">Chris Mayfield and John Packer have been building AI systems together for the past several months. Chris leads product -- what to build, for whom, and why it matters. Jon leads engineering -- how to build it, how to make it run, and how to make it fast. Together they've shipped agent systems, production applications, and rapid prototypes across multiple domains.</p>
+    <p class="lede">Chris Mayfield and John Packer have been building AI systems together for the past several months. Chris leads product -- what to build, for whom, and why it matters. John leads engineering -- how to build it, how to make it run, and how to make it fast.</p>
   </header>
 
-  <!-- CHRIS -->
-  <div class="person-section">
-    <div class="person-header">
-      <span class="person-num">01</span>
-      <span class="person-rule"></span>
-      <span class="person-label">Product & Strategy</span>
-    </div>
+  <!-- SIDE BY SIDE -->
+  <div class="columns">
 
-    <div class="person-name">Chris Mayfield</div>
-    <div class="person-title-line">AI Product Leader · Builds Daily · GM / Cross-Functional Operator</div>
-
-    <div class="track">
-      <div class="track-item">
-        <span class="track-num">01</span>
-        <div class="track-body">
-          <div class="track-title">VP of Product & General Manager, Pluralsight — through IPO</div>
-          <div class="track-detail"><span class="track-tag">GM / Scale</span>Led product through IPO. Operated as a GM leading engineering, data science, product, and design as a single cross-functional unit. Led the team behind Iris, the AI recommendation engine that -- combined with search -- drove 70% of all product usage. Integrated SkillIQ, an acquisition, into the core platform and led innovation on RoleIQ, a new AI-powered measurement product. Both became enterprise staples. Drove product decisions through constant iteration with users and data. Designed and ran product enablement programs to upskill teams across the organization.</div>
-        </div>
+    <!-- CHRIS -->
+    <div class="person-col">
+      <div class="person-header">
+        <span class="person-num">01</span>
+        <span class="person-rule"></span>
+        <span class="person-label">Product & Strategy</span>
       </div>
 
-      <div class="track-item">
-        <span class="track-num">02</span>
-        <div class="track-body">
+      <div class="person-name">Chris Mayfield</div>
+      <div class="person-title-line">AI Product Leader · Builds Daily<br>GM / Cross-Functional Operator</div>
+
+      <div class="track">
+        <div class="track-item">
+          <div class="track-title">VP of Product & GM, Pluralsight</div>
+          <div class="track-detail"><span class="track-tag">GM / IPO</span>Led product through IPO. GM over engineering, data science, product, and design. Led the team behind Iris (AI recommendations, 70% of product usage with search). Integrated SkillIQ (acquisition) and led innovation on RoleIQ. Ran product enablement across the org.</div>
+        </div>
+
+        <div class="track-item">
           <div class="track-title">Head of Product & Product Marketing, Workera</div>
-          <div class="track-detail"><span class="track-tag">AI Agent</span>Led the product team that built Elo -- a conversational AI agent that assessed employee skills, recommended learning paths, measured progress, and surfaced different insights to employees vs. their managers. Not a chatbot. An agent with capabilities that drove real decisions. Took Elo to market through messaging, positioning, and enterprise partnerships -- including Accenture, who adopted it as their premier product for measuring AI transformation readiness. Spoke publicly on AI transformation and product-led growth.</div>
+          <div class="track-detail"><span class="track-tag">AI Agent</span>Led the team that built Elo -- a conversational AI agent for skill assessment, learning recommendations, and manager insights. Took Elo to market with Accenture as their premier AI transformation product. Spoke publicly on AI transformation.</div>
         </div>
-      </div>
 
-      <div class="track-item">
-        <span class="track-num">03</span>
-        <div class="track-body">
+        <div class="track-item">
           <div class="track-title">Head of Product, Welbe</div>
-          <div class="track-detail"><span class="track-tag">0 to 1</span>Led product for a corporate wellness platform serving mid-market companies. Shipped a product that achieved 78% first-week engagement by talking to users daily and iterating in real time. Moved the team from quarterly shipping to biweekly by tightening scope and success criteria. Redesigned the organizational structure to remove handoff friction between product, engineering, and customer success.</div>
+          <div class="track-detail"><span class="track-tag">0 to 1</span>Corporate wellness platform. 78% first-week engagement. Quarterly to biweekly shipping. Redesigned org structure to remove handoff friction.</div>
+        </div>
+
+        <div class="track-item">
+          <div class="track-title">Product design, UX & org design</div>
+          <div class="track-detail"><span class="track-tag">Craft</span>Jobs to be done, human-centered design thinking, visual design across multiple products. Restructured teams at every company. The pattern: observe friction, redesign the work, enable the people.</div>
+        </div>
+
+        <div class="track-item">
+          <div class="track-title">Builds with AI daily</div>
+          <div class="track-detail"><span class="track-tag">Current</span>Ships production applications, agent workflows, and prototypes personally using Claude Code and agent orchestration. Transitioned from design to product to AI engineering -- each shift deliberate, each one compounding.</div>
         </div>
       </div>
 
-      <div class="track-item">
-        <span class="track-num">04</span>
-        <div class="track-body">
-          <div class="track-title">Product design, UX, and organizational design</div>
-          <div class="track-detail"><span class="track-tag">Craft + Operator</span>Deep expertise in jobs to be done, human-centered design thinking, and visual design across multiple products. The product decisions that feel invisible -- hierarchy, flow, what to show and what to hide -- come from years of designing experiences people actually want to use. On the organizational side, at every company Chris has redesigned how teams work together. At Pluralsight, he restructured a siloed org into a cross-functional unit. At Workera, he stood up product marketing from scratch. At Welbe, he rebuilt the delivery pipeline. The pattern: walk in, observe the friction, restructure the work, enable the people. That's the same exercise Ampleo needs across six divisions.</div>
-        </div>
-      </div>
-
-      <div class="track-item">
-        <span class="track-num">05</span>
-        <div class="track-body">
-          <div class="track-title">AI product leader who builds daily</div>
-          <div class="track-detail"><span class="track-tag">Current</span>Not a strategist who talks about AI. A builder who ships with it every day. Uses Claude Code, agent orchestration, and rapid prototyping as core tools. Builds production applications, agent workflows, and interactive prototypes personally -- not by directing others. Transitioned from design to product leadership to AI engineering deliberately, carrying each discipline forward. Each shift made the next one sharper.</div>
-        </div>
+      <div class="relevance">
+        <div class="relevance-label">Why this matters for Amplēo</div>
+        <p>Every feature in the portal prototype maps to something Chris has shipped. Leo AI is Elo. Training Library is Pluralsight. Assessments are Workera. Onboarding is Welbe. The product discipline Joe described -- jobs to be done, talk to customers first -- is what Chris does. He sits with the team, finds the opportunity, and has a prototype by end of day.</p>
       </div>
     </div>
 
-    <div class="relevance">
-      <div class="relevance-label">Why this matters for Amplēo</div>
-      <p>Every feature in the Amplēo Portal prototype maps to something Chris has shipped at scale. Leo AI is Elo. The Training Library is Pluralsight. The assessments are Workera. The onboarding flow is Welbe. But more importantly, the product discipline Joe described -- "what problem are we solving, what are the jobs to be done, let's talk to customers before we build" -- that's what Chris does. He's the person who sits with the finance team for four hours, identifies the low-hanging fruit, and has a working prototype by end of day. He's also the person who redesigns the org so the wins stick.</p>
-    </div>
-  </div>
+    <!-- JOHN -->
+    <div class="person-col">
+      <div class="person-header">
+        <span class="person-num">02</span>
+        <span class="person-rule"></span>
+        <span class="person-label">AI Engineering & Systems</span>
+      </div>
 
-  <!-- JON -->
-  <div class="person-section">
-    <div class="person-header">
-      <span class="person-num">02</span>
-      <span class="person-rule"></span>
-      <span class="person-label">AI Engineering & Systems</span>
-    </div>
+      <div class="person-name">John Packer</div>
+      <div class="person-title-line">AI Engineer · Agent Architect<br>Builder</div>
 
-    <div class="person-name">John Packer</div>
-    <div class="person-title-line">AI Engineer · Agent Architect · Builder</div>
-
-    <div class="track">
-      <div class="track-item">
-        <span class="track-num">01</span>
-        <div class="track-body">
+      <div class="track">
+        <div class="track-item">
           <div class="track-title">AI Engineering — Since the beginning</div>
-          <div class="track-detail"><span class="track-tag">Deep Technical</span>Full-time AI engineering since GPT launched. Prior background in engineering and business intelligence at Goldman Sachs and across finance and tech. Understands both the technical depth and the business context.</div>
+          <div class="track-detail"><span class="track-tag">Deep Technical</span>Full-time AI engineering since GPT launched. Prior: engineering and business intelligence at Goldman Sachs. Finance and tech background. Understands both the technical depth and the business context.</div>
         </div>
-      </div>
 
-      <div class="track-item">
-        <span class="track-num">02</span>
-        <div class="track-body">
-          <div class="track-title">Built & sold a production RAG coaching system</div>
-          <div class="track-detail"><span class="track-tag">Shipped</span>Built a recursive RAG-based coaching platform, took it to market, and sold it. Not a prototype. A production system with paying users. Now can rebuild equivalent systems in hours, not months -- testament to how fast the tooling has evolved.</div>
+        <div class="track-item">
+          <div class="track-title">Built & sold a production RAG system</div>
+          <div class="track-detail"><span class="track-tag">Shipped</span>Built a recursive RAG-based coaching platform, took it to market, sold it. Production system with paying users. Can now rebuild equivalent systems in hours.</div>
         </div>
-      </div>
 
-      <div class="track-item">
-        <span class="track-num">03</span>
-        <div class="track-body">
+        <div class="track-item">
           <div class="track-title">Autofix — Autonomous agent team</div>
-          <div class="track-detail"><span class="track-tag">Agent System</span>Built a team of AI agents that understand incoming messages, triage them, build the solution, and either resolve autonomously or hand to a human with the answer already drafted. 166 passing tests in production. Not a concept -- it runs.</div>
+          <div class="track-detail"><span class="track-tag">Agent System</span>Agents that understand messages, triage, build solutions, and resolve or hand to humans with answers drafted. 166 passing tests in production.</div>
         </div>
-      </div>
 
-      <div class="track-item">
-        <span class="track-num">04</span>
-        <div class="track-body">
+        <div class="track-item">
           <div class="track-title">Multi-agent production pipeline</div>
-          <div class="track-detail"><span class="track-tag">Architecture</span>Designed and operates a full idea-to-production pipeline using coordinated agent teams. From concept to working, deployed software. Can clone, replicate, and adapt production applications from screenshots or descriptions in hours.</div>
+          <div class="track-detail"><span class="track-tag">Architecture</span>Full idea-to-production pipeline using coordinated agent teams. Clone, replicate, and adapt production applications from screenshots in hours.</div>
         </div>
+
+        <div class="track-item" style="border-bottom:none">
+          <div class="track-title">&nbsp;</div>
+          <div class="track-detail" style="visibility:hidden">Spacer for visual alignment</div>
+        </div>
+      </div>
+
+      <div class="relevance">
+        <div class="relevance-label">Why this matters for Amplēo</div>
+        <p>John is the reason "two days to production" is not an exaggeration. He builds the systems that make AI capabilities real -- working software connected to real data. The speed and reliability of Amplēo's AI buildout depends on this level of engineering.</p>
       </div>
     </div>
 
-    <div class="relevance">
-      <div class="relevance-label">Why this matters for Amplēo</div>
-      <p>Jon is the reason "two days to production" is not an exaggeration. He builds the systems that make AI capabilities real -- not mockups, not prototypes, but working software connected to real data. The speed and reliability of Amplēo's AI buildout depends on having an engineer who operates at this level.</p>
-    </div>
   </div>
 
   <!-- TOGETHER -->
   <div class="together">
     <div class="together-label">Together</div>
     <h3>Product leader + AI engineer. What to build + how to build it.</h3>
-    <p>Chris defines the problem, the user, and the experience. Jon builds the system, the agents, and the infrastructure. Chris ensures it matters. Jon ensures it works. The combination means Amplēo gets both product discipline and technical speed from day one.</p>
-    <p>They've been building together for several months across multiple projects: fitness coaching agents, competitive intelligence systems, autonomous agent hackathons, and rapid prototyping workflows. The partnership is tested and the working rhythm is established.</p>
+    <p>Chris defines the problem, the user, and the experience. John builds the system, the agents, and the infrastructure. Chris ensures it matters. John ensures it works. Amplēo gets both product discipline and technical speed from day one.</p>
   </div>
 
-  <!-- WHAT THEY'VE BUILT TOGETHER -->
-  <div class="person-section" style="margin-top:40px">
-    <div class="person-header">
-      <span class="person-num">03</span>
-      <span class="person-rule"></span>
-      <span class="person-label">Built Together</span>
+  <!-- BUILT TOGETHER -->
+  <div class="built-section">
+    <div class="built-header">
+      <span class="built-num">03</span>
+      <span class="built-rule"></span>
+      <span class="built-label">Built Together</span>
     </div>
 
-    <div class="track">
-      <div class="track-item">
-        <span class="track-num">01</span>
-        <div class="track-body">
-          <div class="track-title">Autofix — Autonomous support and development</div>
-          <div class="track-detail"><span class="track-tag">Agent System</span>A team of agents that understand incoming messages, triage them, build the solution, and either resolve autonomously or hand to a human with the answer already drafted. 166 passing tests in production. Directly applicable to Ampleo's support operations and client service delivery.</div>
-        </div>
+    <div class="built-grid">
+      <div class="built-card">
+        <div class="built-card-tag">Agent System</div>
+        <div class="built-card-title">Autofix</div>
+        <p>Autonomous support and development. Agents triage, build, and ship. 166 tests passing. Directly applicable to Ampleo's service operations.</p>
       </div>
 
-      <div class="track-item">
-        <span class="track-num">02</span>
-        <div class="track-body">
-          <div class="track-title">30-Agent Hackathon — Multi-agent orchestration</div>
-          <div class="track-detail"><span class="track-tag">Scale</span>Coordinated 30 autonomous agents in a live hackathon. Two weeks of human work completed in one weekend. Demonstrated that agent teams can plan, build, review, and ship -- the same coordination pattern Ampleo needs across its divisions.</div>
-        </div>
+      <div class="built-card">
+        <div class="built-card-tag">Scale</div>
+        <div class="built-card-title">30-Agent Hackathon</div>
+        <p>Multi-agent orchestration. Two weeks of work in one weekend. The coordination pattern Ampleo needs across divisions.</p>
       </div>
 
-      <div class="track-item">
-        <span class="track-num">03</span>
-        <div class="track-body">
-          <div class="track-title">Tess — AI Chief of Staff</div>
-          <div class="track-detail"><span class="track-tag">Orchestration</span>Cross-domain AI system that synthesizes context from multiple sources, generates daily briefings, manages priorities, and routes tasks to specialized agents. The same architecture Leo AI needs to synthesize client data across finance, HR, and marketing.</div>
-        </div>
+      <div class="built-card">
+        <div class="built-card-tag">Orchestration</div>
+        <div class="built-card-title">Tess</div>
+        <p>AI Chief of Staff. Synthesizes context, generates briefings, routes to specialists. The architecture Leo AI needs.</p>
       </div>
 
-      <div class="track-item">
-        <span class="track-num">04</span>
-        <div class="track-body">
-          <div class="track-title">Hone — AI coaching with persistent context</div>
-          <div class="track-detail"><span class="track-tag">Product</span>AI coaching system with persistent memory across sessions, injury-aware programming, real-time feedback. Running in production on mobile. Demonstrates the pattern: AI that knows your history and gets smarter over time -- exactly what Leo AI should do for Ampleo clients.</div>
-        </div>
+      <div class="built-card">
+        <div class="built-card-tag">Product</div>
+        <div class="built-card-title">Hone</div>
+        <p>AI coaching with persistent memory. Injury-aware, real-time feedback. Running on mobile. AI that gets smarter over time.</p>
       </div>
 
-      <div class="track-item">
-        <span class="track-num">05</span>
-        <div class="track-body">
-          <div class="track-title">Noctis — Competitive intelligence engine</div>
-          <div class="track-detail"><span class="track-tag">Data</span>Proactively monitors job postings, product releases, and funding announcements. Surfaces synthesized signals, not raw data. The proactive insight pattern -- surfacing what matters before you ask -- is the same pattern Ampleo's AI Insights feature needs.</div>
-        </div>
+      <div class="built-card">
+        <div class="built-card-tag">Data</div>
+        <div class="built-card-title">Noctis</div>
+        <p>Competitive intelligence engine. Proactive monitoring, synthesized signals. The same pattern Ampleo's AI Insights needs.</p>
       </div>
 
-      <div class="track-item">
-        <span class="track-num">06</span>
-        <div class="track-body">
-          <div class="track-title">Rapid prototyping and production pipeline</div>
-          <div class="track-detail"><span class="track-tag">Speed</span>Screenshot to working production application in hours. Client portal clones, interactive dashboards, mobile-first coaching apps. The speed Lincoln saw in the meeting is not a demo -- it's how they work every day.</div>
-        </div>
+      <div class="built-card">
+        <div class="built-card-tag">Speed</div>
+        <div class="built-card-title">Rapid Production</div>
+        <p>Screenshot to working application in hours. The speed Lincoln saw in the meeting is how they work every day.</p>
       </div>
     </div>
   </div>
 
   <div class="closing">
-    <p>Lincoln knows both Chris and Jon personally. This brief provides additional context for the broader team. LinkedIn profiles are available for further detail.</p>
+    <p>Lincoln knows both Chris and John personally. This brief provides additional context for the broader team. LinkedIn profiles are available for further detail.</p>
     <div class="closing-sig">Chris Mayfield · John Packer · March 2026</div>
   </div>
 
