@@ -27,7 +27,7 @@ body{background:var(--paper);color:var(--ink);font-family:'Barlow',sans-serif;fo
 .header{margin-bottom:48px;padding-bottom:36px;border-bottom:1px solid var(--sand);max-width:720px}
 .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:16px}
 .title{font-family:'Lora',serif;font-size:clamp(28px,4vw,40px);font-weight:400;line-height:1.15;letter-spacing:-.025em;margin-bottom:12px}
-.title em{font-style:italic;color:var(--ampleo)}
+.title em{font-style:italic;color:var(--ampleo-lime)}
 .lede{font-size:15px;color:var(--mid);max-width:580px;line-height:1.7}
 
 /* SIDE BY SIDE */
@@ -36,11 +36,11 @@ body{background:var(--paper);color:var(--ink);font-family:'Barlow',sans-serif;fo
 /* PERSON COLUMN */
 .person-col{}
 .person-header{display:flex;align-items:center;gap:10px;margin-bottom:20px}
-.person-num{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--ampleo)}
+.person-num{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--ampleo-lime)}
 .person-rule{flex:1;height:1px;background:var(--sand)}
 .person-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ampleo)}
 
-.person-name{font-family:'Lora',serif;font-size:22px;font-weight:500;letter-spacing:-.02em;margin-bottom:4px}
+.person-name{font-family:'Lora',serif;font-size:22px;font-weight:500;letter-spacing:-.02em;margin-bottom:4px;color:var(--ampleo)}
 .person-title-line{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;color:var(--mid);margin-bottom:20px;line-height:1.5}
 
 /* TRACK RECORD */
@@ -191,44 +191,46 @@ body{background:var(--paper);color:var(--ink);font-family:'Barlow',sans-serif;fo
     <div class="built-header">
       <span class="built-num">03</span>
       <span class="built-rule"></span>
-      <span class="built-label">Built Together</span>
+      <span class="built-label">What We're Building Together</span>
     </div>
+
+    <p style="font-size:14px;color:var(--mid);margin-bottom:20px;max-width:680px">Active projects across AI product development, agent systems, and rapid prototyping. Some are in production. Some are in active development. All represent the working patterns we'd bring to Ampleo.</p>
 
     <div class="built-grid">
       <div class="built-card">
-        <div class="built-card-tag">Agent System</div>
+        <div class="built-card-tag" style="color:var(--ampleo-lime)">Production</div>
         <div class="built-card-title">Autofix</div>
-        <p>Autonomous support and development. Agents triage, build, and ship. 166 tests passing. Directly applicable to Ampleo's service operations.</p>
+        <p>Autonomous support agents. Triage, build, and ship solutions. 166 tests passing in production.</p>
       </div>
 
       <div class="built-card">
-        <div class="built-card-tag">Scale</div>
+        <div class="built-card-tag" style="color:var(--ampleo-lime)">Completed</div>
         <div class="built-card-title">30-Agent Hackathon</div>
-        <p>Multi-agent orchestration. Two weeks of work in one weekend. The coordination pattern Ampleo needs across divisions.</p>
+        <p>Multi-agent orchestration at scale. Two weeks of work in one weekend.</p>
       </div>
 
       <div class="built-card">
-        <div class="built-card-tag">Orchestration</div>
+        <div class="built-card-tag">Active Build</div>
         <div class="built-card-title">Tess</div>
-        <p>AI Chief of Staff. Synthesizes context, generates briefings, routes to specialists. The architecture Leo AI needs.</p>
+        <p>AI Chief of Staff. Synthesizes context, generates briefings, routes to specialized agents.</p>
       </div>
 
       <div class="built-card">
-        <div class="built-card-tag">Product</div>
+        <div class="built-card-tag">Active Build</div>
         <div class="built-card-title">Hone</div>
-        <p>AI coaching with persistent memory. Injury-aware, real-time feedback. Running on mobile. AI that gets smarter over time.</p>
+        <p>AI coaching with persistent memory. Injury-aware programming, real-time feedback.</p>
       </div>
 
       <div class="built-card">
-        <div class="built-card-tag">Data</div>
+        <div class="built-card-tag">Early Stage</div>
         <div class="built-card-title">Noctis</div>
-        <p>Competitive intelligence engine. Proactive monitoring, synthesized signals. The same pattern Ampleo's AI Insights needs.</p>
+        <p>Competitive intelligence engine. Proactive monitoring, synthesized signals.</p>
       </div>
 
       <div class="built-card">
-        <div class="built-card-tag">Speed</div>
-        <div class="built-card-title">Rapid Production</div>
-        <p>Screenshot to working application in hours. The speed Lincoln saw in the meeting is how they work every day.</p>
+        <div class="built-card-tag" style="color:var(--ampleo-lime)">Daily Practice</div>
+        <div class="built-card-title">Rapid Prototyping</div>
+        <p>Screenshot to working application in hours. The speed Lincoln saw in the meeting is how we work.</p>
       </div>
     </div>
   </div>
