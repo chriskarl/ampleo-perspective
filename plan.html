@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Amplēo Labs: What Changes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink:        #0e0c0a;
+  --paper:      #f5f2ed;
+  --sand:       #e4ddd2;
+  --mid:        rgba(14,12,10,0.55);
+  --faint:      rgba(14,12,10,0.04);
+  --ampleo:     #1e3d2b;
+  --ampleo-lime:#7a9e00;
+  --ampleo-mid: rgba(30,61,43,0.06);
+  --ampleo-dark:rgba(30,61,43,0.92);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Barlow",sans-serif;font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:780px;margin:0 auto;padding:72px 40px 100px}
+
+.logo{margin-bottom:40px}
+.logo svg{width:160px;height:auto}
+
+.header{margin-bottom:72px;padding-bottom:48px;border-bottom:1px solid var(--sand)}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:24px}
+.title{font-family:"Lora",serif;font-size:clamp(32px,4.2vw,50px);font-weight:400;line-height:1.15;letter-spacing:-.025em;margin-bottom:20px;text-wrap:balance;max-width:700px}
+.title em{font-style:italic;color:var(--ampleo-lime)}
+
+.hook{margin-bottom:48px}
+.hook p{font-size:17px;font-weight:400;line-height:1.75;color:var(--ink);max-width:640px;margin-bottom:16px}
+.hook p:last-child{margin-bottom:0}
+.hook-cap{font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ampleo);margin-bottom:12px}
+
+.part{margin:64px 0 48px;display:flex;align-items:center;gap:20px}
+.part-body{}
+.part-label{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ampleo-lime);margin-bottom:8px}
+.part-title{font-family:"Lora",serif;font-size:clamp(24px,3.5vw,36px);font-weight:400;line-height:1.2;letter-spacing:-.02em;text-wrap:balance}
+.part-title em{font-style:italic;color:var(--ampleo-lime)}
+
+.solved{background:var(--ampleo);padding:40px 44px;margin:32px 0}
+.solved p{font-family:"Lora",serif;font-size:clamp(17px,2.2vw,22px);font-weight:400;font-style:italic;line-height:1.6;color:white;margin-bottom:14px;text-wrap:balance}
+.solved p:last-child{margin-bottom:0}
+.solved p strong{font-weight:600;color:var(--ampleo-lime);font-style:normal}
+
+.wback{margin:32px 0}
+.wback-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ampleo);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.wback-label::after{content:"";flex:1;height:1px;background:var(--sand)}
+.steps{margin:0}
+.step{display:grid;grid-template-columns:28px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--sand)}
+.step:first-child{border-top:1px solid var(--sand)}
+.step-n{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--ampleo-lime);padding-top:3px;font-weight:500}
+.step-body{}
+.step-title{font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ampleo);margin-bottom:4px}
+.step-val{font-size:14px;font-weight:400;line-height:1.7;letter-spacing:-.01em;color:var(--ink)}
+
+.takes{margin:32px 0}
+.takes-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ampleo);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.takes-label::after{content:"";flex:1;height:1px;background:var(--sand)}
+.take-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px}
+.take-card{padding:24px 24px 28px;background:var(--ampleo-mid)}
+.take-card-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ampleo);margin-bottom:8px}
+.take-card-title{font-family:"Lora",serif;font-size:17px;font-weight:500;margin-bottom:8px;letter-spacing:-.01em;color:var(--ink)}
+.take-card p{font-size:13px;font-weight:400;line-height:1.65;color:var(--ink);margin:0}
+
+.take-cards-2{grid-template-columns:1fr 1fr}
+
+.pov{padding:32px 36px;background:var(--ampleo-lime);margin:32px 0}
+.pov-bright{padding:32px 36px;background:rgba(204,255,0,0.45);margin:32px 0}
+.pov p{font-family:"Lora",serif;font-size:18px;font-weight:400;font-style:italic;line-height:1.55;color:var(--ink);margin:0;text-wrap:balance}
+
+.metrics{margin:32px 0}
+.metric-row{display:grid;grid-template-columns:140px 1fr;gap:0;padding:18px 0;border-bottom:1px solid var(--sand)}
+.metric-row:first-child{border-top:1px solid var(--sand)}
+.metric-label{font-family:"Barlow Condensed",sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ampleo);padding-top:2px}
+.metric-val{font-size:15px;font-weight:400;line-height:1.7;letter-spacing:-.01em;color:var(--ink)}
+.metric-val strong{font-weight:600}
+
+.prose{margin:24px 0}
+.prose p{font-size:15px;font-weight:400;line-height:1.8;letter-spacing:-.01em;color:var(--ink);margin-bottom:16px;max-width:660px}
+.prose p:last-child{margin-bottom:0}
+
+.div{border:none;border-top:1px solid var(--sand);margin:56px 0}
+
+.nav-link{display:inline-flex;align-items:center;gap:8px;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ampleo);text-decoration:none;padding:10px 0;transition:color .2s}
+.nav-link:hover{color:var(--ampleo-lime)}
+.nav-link svg{width:14px;height:14px;fill:currentColor}
+
+.closing{margin-top:56px;padding-top:40px;border-top:1px solid var(--sand)}
+.closing-text{font-family:"Lora",serif;font-size:clamp(17px,2.2vw,22px);font-weight:400;line-height:1.5;letter-spacing:-.02em;color:var(--ink);max-width:580px;margin-bottom:20px;text-wrap:balance}
+.closing-sig{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;color:var(--mid)}
+.closing-links{margin-top:32px;display:flex;flex-direction:column;gap:8px}
+
+@media(max-width:620px){
+  .wrap{padding:40px 20px 60px}
+  .take-cards,.take-cards-2{grid-template-columns:1fr}
+  .step{grid-template-columns:1fr;gap:4px}
+  .solved{padding:28px 24px}
+  .metric-row{grid-template-columns:1fr;gap:4px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- LOGO -->
+  <div class="logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 385.09 72"><path fill="#1e3d2b" d="M48,24.46V2.93A2.84,2.84,0,0,0,43.54.57L1.26,29A2.83,2.83,0,0,0,0,31.32v21.9a2.86,2.86,0,0,0,2.85,2.85h0a2.91,2.91,0,0,0,1.59-.48L42.1,30.29a2.84,2.84,0,0,1,4.43,2.36V53.22a2.86,2.86,0,0,0,2.85,2.85H72.45a2.85,2.85,0,0,0,2.84-2.85V30.16a2.84,2.84,0,0,0-2.84-2.85H50.82A2.86,2.86,0,0,1,48,24.46Z"/><path fill="#1e3d2b" d="M124.62,0h14.32l20.48,56H146.54l-4.4-12H120.78l-4.32,12h-12.4Zm14.24,34-7.44-21.12L124.06,34Z"/><path fill="#1e3d2b" d="M227,33V56H215.73V33c0-5.92-2.24-9-7-9-5,0-8.16,3.52-8,9.84V56H189.41V33c0-5.92-2.24-9-7.12-9s-7.92,3.68-7.92,9.44V56H163.09V14.88h9.84L174,19a14.91,14.91,0,0,1,11.52-4.64c5,0,9.6,1.6,12.24,6.32,2.8-3.92,7.44-6.32,13.92-6.32C219.65,14.4,227,18.56,227,33Z"/><path fill="#1e3d2b" d="M275,35.44c0,12.8-8.32,21-19.44,21-5.6,0-9.52-2-12.08-4.72V72H232.21V14.88h9.84l1.12,4.88a16,16,0,0,1,12.32-5.36C266.69,14.32,275,22.16,275,35.44Zm-11.52-.08c0-6.88-3.92-11.6-10.16-11.6s-10,4.72-10,11.52c0,7,3.84,11.84,10,11.84S263.49,42.32,263.49,35.36Z"/><path fill="#1e3d2b" d="M290.53,0V56H279.25V0Z"/><path fill="#1e3d2b" d="M315,14.4c12.4,0,21,7.68,21,19.76a24,24,0,0,1-.32,4.08h-29.6v.16c.48,5.68,3.76,9.2,9.52,9.2,4.48,0,7.6-1.92,8.56-5.6h11.2c-1.28,8.08-8.16,14.48-18.88,14.48-13.84,0-22.16-8.24-22.16-21C294.37,22.64,302.61,14.4,315,14.4Zm9.68,16c-.72-4.64-4.32-7.2-9.28-7.2-4.4,0-8.32,2.64-9,7.2Z"/><path fill="#1e3d2b" d="M339.72,35.44c0-12.64,8.65-21,21.69-21s21.68,8.4,21.68,21-8.64,21-21.68,21S339.72,48.08,339.72,35.44Zm31.85,0c0-6.8-3.84-11.6-10.16-11.6s-10.16,4.8-10.16,11.6S355.09,47,361.41,47,371.57,42.24,371.57,35.44Z"/><path fill="#1e3d2b" d="M305.05,4.53h20.32v6.11H305.05Z"/></svg>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="eyebrow">Amplēo Labs · March 2026 · Prepared by Chris Mayfield &amp; Jon Packer</div>
+    <h1 class="title">The perspective laid out why. <em>This is what happens next.</em></h1>
+  </header>
+
+  <!-- HOOK STORY -->
+  <div class="hook">
+    <div class="hook-cap">What this looks like in practice</div>
+    <p>Your client Sarah is a CFO engagement. Every Tuesday she emails her account lead asking for a status update. Two people stop what they're doing to pull together a reply. They check Slack, dig through a shared drive, draft something that sounds confident, and send it. Thirty minutes gone. Multiply that by every active engagement across every practice line.</p>
+    <p>Now picture this: Sarah stops emailing. Not because she's unhappy. Because she opened a portal, saw her KPIs were green, saw the next deliverable was on track, and went back to running her company. Her account lead spent that thirty minutes on actual client work instead of assembling a status report.</p>
+    <p>Meanwhile, your ops team just closed a new deal. Three weeks ago, that meant two weeks of manual handoffs before the first consultant could start. Matching, quoting, SOW assembly, staffing requests, onboarding packets. All by hand, all across HubSpot and Firebase and email. Yesterday, the same process took four hours. The consultant started Monday instead of mid-April.</p>
+    <p>This is what the lab builds.</p>
+  </div>
+
+  <hr class="div"/>
+
+  <!-- 12 MONTHS -->
+  <div class="part">
+    <div class="part-body">
+      <div class="part-label">12 Months From Now</div>
+      <h2 class="part-title">What Amplēo <em>looks like.</em></h2>
+    </div>
+  </div>
+
+  <div class="solved">
+    <p>Deals close and consultants start in days, not weeks. The gap between "yes" and "work begins" shrinks from weeks to hours. Every deal that used to sit in a two-week queue of manual handoffs now flows through an automated pipeline: matching, quoting, SOW, staffing, onboarding. <strong>That's revenue hitting the books faster on every single deal Amplēo closes, across every practice line.</strong></p>
+    <p>Practice leads walk into pitches with AI-generated research briefs. Company profiles, leadership changes, financial signals, risk factors. Sources cited, claims verified, ready in minutes instead of hours. They're the best-prepared team in the room, every time.</p>
+    <p>The marketing services Amplēo acquired through Stage Marketing and Avalaunch Media are packaged into repeatable, sellable tiers. Not custom scoping on every engagement. Standardized packages with clear pricing, onboarding, delivery cadence, and KPI reporting. More deals closed, faster, with less pre-sales effort.</p>
+    <p>Clients see a portal showing their engagement in real time. Deliverables, KPIs, next actions, communication history. They feel like partners who can see the work happening, not purchasers waiting for the next invoice. <strong>Retention goes up because transparency builds trust, and trust compounds into referrals and expansions that no sales process can manufacture.</strong></p>
+    <p>Unity doesn't see projection spreadsheets. They see adoption dashboards with real usage data from real clients and real employees. Real evidence, not forecasts.</p>
+  </div>
+
+  <hr class="div"/>
+
+  <!-- THE SIMPLE VERSION -->
+  <div class="part">
+    <div class="part-body">
+      <div class="part-label">The Simple Version</div>
+      <h2 class="part-title">Everything Lincoln needs to know, <em>on one page.</em></h2>
+    </div>
+  </div>
+
+  <div class="metrics">
+    <div class="metric-row">
+      <div class="metric-label">What</div>
+      <div class="metric-val">A 2-person AI product lab shipping internal tools for Amplēo. Chris Mayfield (product) and Jon Packer (engineering). We operate at the output of a 6-8 person team using AI-native development.</div>
+    </div>
+    <div class="metric-row">
+      <div class="metric-label">Cost</div>
+      <div class="metric-val">475,000 combined annual base plus standard benefits. No recruiter fees, no hiring ramp. We'd propose <strong>performance bonuses tied to measurable lab outcomes</strong> (adoption metrics, value delivered) so our incentives align with yours.</div>
+    </div>
+    <div class="metric-row">
+      <div class="metric-label">Payback</div>
+      <div class="metric-val">The lab pays for itself in approximately <strong>6 months</strong> from automation savings and revenue acceleration alone. That's before portal retention effects even start showing up.</div>
+    </div>
+    <div class="metric-row">
+      <div class="metric-label">Year 1 Value</div>
+      <div class="metric-val"><strong>478,000</strong> from the hard, measurable stuff we can defend with a straight face. <strong>854,000</strong> with reasonable upside from portal retention and expansion. Both numbers are stress-tested with honest timelines for when each dollar actually shows up.</div>
+    </div>
+    <div class="metric-row">
+      <div class="metric-label">Full Run Rate</div>
+      <div class="metric-val"><strong>1.4 million+</strong> once everything is live and adopted for a full 12 months.</div>
+    </div>
+  </div>
+
+  <hr class="div"/>
+
+  <!-- 90-DAY MILESTONES -->
+  <div class="wback">
+    <div class="wback-label">90-Day Milestones</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">30</div>
+        <div class="step-body">
+          <div class="step-title">Prototype and Validate</div>
+          <div class="step-val">Client portal prototype live with real clients. Quote-to-onboard workflow mapped with one step automated. Adoption data in hand. We know which tools earned full investment and which need rethinking.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">60</div>
+        <div class="step-body">
+          <div class="step-title">Build and Measure</div>
+          <div class="step-val">Quote-to-onboard automation live for at least one practice line. Portal expanded based on real usage data. Cycle time reduction measured and reportable to Unity. AutoResearch and marketing prototypes deployed for verification.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">90</div>
+        <div class="step-body">
+          <div class="step-title">Scale and Prove</div>
+          <div class="step-val">At least two practice lines on the portal. AutoResearch and marketing productization validated. Board-ready value scorecard backed by 3 months of real adoption data. Every number tied to real usage, not projections.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHERE THE VALUE COMES FROM -->
+  <div class="takes">
+    <div class="takes-label">Where the Value Comes From</div>
+    <div class="take-cards take-cards-2">
+      <div class="take-card">
+        <div class="take-card-label">Revenue Acceleration</div>
+        <div class="take-card-title">350,000</div>
+        <p>When deals close faster, revenue hits the books sooner. Automating quote-to-onboard compresses a 2+ week cycle to hours. Across 200+ deals per year, the acceleration is measurable on every single one.</p>
+      </div>
+      <div class="take-card">
+        <div class="take-card-label">Research Efficiency</div>
+        <div class="take-card-title">72,000</div>
+        <p>AI-generated research briefs replace hours of manual diligence work. Company profiles, risk signals, financial data, all with cited sources. Transaction advisory stops spending half a day assembling what a tool can produce in minutes.</p>
+      </div>
+      <div class="take-card">
+        <div class="take-card-label">Labor Savings</div>
+        <div class="take-card-title">56,000</div>
+        <p>Manual quote assembly, status report construction, onboarding packet creation. The hours people currently spend on these things go to zero. Those hours move to client work and business development.</p>
+      </div>
+      <div class="take-card">
+        <div class="take-card-label">Retention &amp; Expansion</div>
+        <div class="take-card-title">316,000+</div>
+        <p>Portal transparency builds trust. Clients who can see the work happening renew more, expand more, and refer more. Harder to measure, but the retention signal becomes visible by month 6.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- POV -->
+  <div class="pov-bright">
+    <p>The lab isn't just building AI products. The lab IS the proof that AI-native teams outperform traditional ones. Two people with the right tools, shipping faster than an 8-person team.</p>
+  </div>
+
+  <hr class="div"/>
+
+  <!-- WHAT WE NEED -->
+  <div class="part">
+    <div class="part-body">
+      <div class="part-label">One Ask</div>
+      <h2 class="part-title">What we need <em>from you.</em></h2>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>Full access to systems, customers, and internal processes from day 1. No waiting for IT to provision accounts. And organizational backing so practice leads adopt the tools we build. Without that, adoption stalls and none of the numbers work.</p>
+    <p>Everything else, we handle.</p>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <p class="closing-text">Both transformations start in the same place: one beachhead, one build, one real result. The perspective exists. The plan is here. The right move is to begin.</p>
+    <p class="closing-sig">Chris Mayfield &amp; Jon Packer · March 2026</p>
+    <div class="closing-links">
+      <a class="nav-link" href="index.html">
+        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        Read the Perspective
+      </a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
